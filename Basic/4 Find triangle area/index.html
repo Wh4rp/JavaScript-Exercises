@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area triangle</title>
+</head>
+<body>
+  <h1>Area of triangle with sides: 5, 6 and 7</h1>
+  <p id="area"></p>
+  <script>
+    let a = 5, b = 6, c = 7;
+    let s = (a + b + c) / 2;
+    let area = Math.sqrt(s * (s-a) * (s-b) * (s - c));
+    document.getElementById("area").innerHTML = area;
+  </script>
+</body>
+</html>

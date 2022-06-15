@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      Today is : <a id="day"></a>.
+    </p>
+    <p>
+      Current time is : <a id="hours"></a> <a id="meridiem"></a> : <a id="minutes"></a> : <a id="seconds"></a>
+    </p>
+
+    <p id="dia"></p>
+    <p id="hora"></p>
+    <p id="mes"></p>
+
+    <script>
+      let date = new Date();
+      let days = {
+        '1':"Monday",
+        '2':"Tuesday",
+        '3':"Wednesday",
+        '4':"Thursday",
+        '5':"Friday",
+        '6':"Saturday",
+        '7':"Sunday",
+      }
+      let day = date.getDay();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+      let meridiem;
+      if( hours >= 12){
+        if(hours != 12){
+          hours -= 12;
+        }
+        meridiem = "PM";
+      }
+      else{
+        if(hours == 0){
+          hours = 12;
+        }
+        meridiem = "AM";
+      }
+
+      document.getElementById("day").innerHTML = days[day];
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("meridiem").innerHTML = meridiem;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+      
+    </script>
+
+  </body>
+</html> 
